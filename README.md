@@ -7,3 +7,4 @@ POC completes ongonging recordings and long running jobs like file operations or
 
 ## Links
 - Installation: https://OpenCockpit.github.io/PowerCockpit
+- User Guide: https://github.com/OpenCockpit/PowerCockpit/wiki
