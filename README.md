@@ -5,6 +5,8 @@ POC completes ongonging recordings and long running jobs like file operations or
 ## Limitations
 - Tested on OpenViX and OpenATV with DM900.
 
-## Links
-- Installation: https://OpenCockpit.github.io/PowerCockpit
-- User Guide: https://github.com/OpenCockpit/PowerCockpit/wiki
+## Installation
+The plugin will be installed as a dependency, no explicit installation required.
+
+## Wiki
+- https://github.com/OpenCockpit/PowerCockpit/wiki

@@ -380,8 +380,9 @@ class TryQuitMainloop(MessageBox):
 		self.ptsmainloopvalue = retvalue
 		if retvalue == QUIT_SHUTDOWN and FileManager is not None:
 			if hasattr(config.plugins, "moviecockpit"):
-				file_manager = FileManager("MVC")
-				file_manager.purgeTrashcan(config.plugins.moviecockpit.trashcan_retention.value)
+				file_manager = FileManager.getInstance("MVC")
+				if config.plugins.moviecockpit.trashcan_clean.value:
+					file_manager.purgeTrashcan(config.plugins.moviecockpit.trashcan_retention.value)
 				file_manager.archive()
 		recordings = isLiveRecordingOrRecordingSoon(session)  # session.nav.getRecordings()
 		jobs = []
