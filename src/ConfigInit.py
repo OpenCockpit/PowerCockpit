@@ -9,6 +9,8 @@ from .Debug import logger
 logger.info("...")
 if not hasattr(config.plugins, "powercockpit"):
     config.plugins.powercockpit = ConfigSubsection()
+# Show the message that names the reason when the box goes to standby to wait for its activities before a shutdown.
+# Not in a setup screen: change it in /etc/enigma2/settings while Enigma2 is stopped.
 config.plugins.powercockpit.show_idle_msg = ConfigYesNo(default=True)
 
 # config.usage.power only exists on OpenViX (Components/UsageConfig.py); openATV

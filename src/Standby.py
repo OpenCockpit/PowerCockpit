@@ -421,6 +421,15 @@ class TryQuitMainloop(MessageBox):
 			return
 		elif reason and not inStandby:
 			if retvalue == QUIT_SHUTDOWN:
+				if not config.plugins.powercockpit.show_idle_msg.value:
+					# no message: go to standby right away and wait there until all activities are finished
+					DeferredShutdown(session, retvalue)
+					Tools.Notifications.AddNotification(Standby2)
+					self.isMessageBox = False
+					self.skin = """<screen position="1310,0" size="0,0"/>"""
+					Screen.__init__(self, session)
+					self.close(False)   # as the original: close() sends the HDMI-CEC standby message to the TV
+					return
 				text = reason + _("Entering standby. Shutdown will proceed when all activities are finished.")
 				MessageBox.__init__(self, session, text, type=MessageBox.TYPE_INFO, timeout=5)
 				self.skinName = "MessageBoxSimple"
@@ -488,6 +497,8 @@ class TryQuitMainloop(MessageBox):
 			self.session.nav.record_event.remove(self.getRecordEvent)
 		if getattr(self, 'deferShutdown', False):
 			self.deferShutdown = False
+			if config.hdmicec.enabled.value and self.retval == 1:
+				sendCEC()   # the TV goes to standby now, like with the shutdown itself (and not only if "Put TV in standby" is set)
 			DeferredShutdown(self.session, self.retval)
 			Tools.Notifications.AddNotification(Standby2)
 			MessageBox.close(self, True)

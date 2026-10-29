@@ -24,7 +24,7 @@ msgid "Your %s %s is rebooting"
 msgstr "Die %s %s startet neu"
 
 msgid "The user interface of your %s %s is restarting"
-msgstr "Das Benutzerinterface der %s %s startet neu"
+msgstr "Das Benutzerinterface der %s %s startet neu."
 
 msgid "The user interface of your %s %s will be stopped to run Kodi"
 msgstr "Das Benutzerinterface der %s %s wird gestoppt, um Kodi zu starten"
