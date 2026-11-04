@@ -292,6 +292,11 @@ inTryQuitMainloop = False
 deferredShutdown = None
 
 
+def hasExternalStreamClients():
+	# like stock enigma2: clients on localhost (local consumers of the stream server) do not count
+	return any(stream[0] != "127.0.0.1" for stream in eStreamServer.getInstance().getConnectedClients())
+
+
 class DeferredShutdown:
 	"""Monitors active activities while in standby and shuts down when all are finished."""
 
@@ -338,7 +343,7 @@ class DeferredShutdown:
 		if jobs:
 			return
 
-		if eStreamServer.getInstance().getConnectedClients() or StreamServiceList:
+		if hasExternalStreamClients() or StreamServiceList:
 			return
 
 		print("[Standby] DeferredShutdown: all activities finished, shutting down")
@@ -408,17 +413,20 @@ class TryQuitMainloop(MessageBox):
 		if recordings or (next_rec_time > 0 and (next_rec_time - time()) < 360):
 			default_yes = False
 			reason = _("Recording(s) are in progress or coming up in few seconds!") + '\n'
-		if eStreamServer.getInstance().getConnectedClients() or StreamServiceList:
-			reason += _("A client is streaming from this box!") + '\n'
+		if hasExternalStreamClients() or StreamServiceList:
+			reason +=_("A client is streaming from this box!") + '\n'
 
 		if reason and inStandby:
+			# only a shutdown is deferred; every other mode (reboot, restart, recovery, ...)
+			# falls through to the final close(True) below, like stock enigma2, instead of
+			# being cancelled silently
 			if retvalue == QUIT_SHUTDOWN:
 				DeferredShutdown(session, retvalue)
-			self.isMessageBox = False
-			self.skin = """<screen position="1310,0" size="0,0"/>"""
-			Screen.__init__(self, session)
-			self.close(False)
-			return
+				self.isMessageBox = False
+				self.skin = """<screen position="1310,0" size="0,0"/>"""
+				Screen.__init__(self, session)
+				self.close(False)
+				return
 		elif reason and not inStandby:
 			if retvalue == QUIT_SHUTDOWN:
 				if not config.plugins.powercockpit.show_idle_msg.value:
