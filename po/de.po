@@ -1,0 +1,115 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PowerCockpit\n"
+"POT-Creation-Date: 2026-02-16 16:14+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: xcentaurix\n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-Basepath: ../src\n"
+"X-Poedit-SearchPath-0: .\n"
+
+msgid "Standby"
+msgstr "Standby"
+
+msgid "Your %s %s is shutting down"
+msgstr "Die %s %s wird ausgeschaltet."
+
+msgid "Your %s %s is rebooting"
+msgstr "Die %s %s startet neu."
+
+msgid "The user interface of your %s %s is restarting"
+msgstr "Das Benutzerinterface der %s %s startet neu."
+
+msgid "The user interface of your %s %s will be stopped to run Kodi"
+msgstr "Das Benutzerinterface der %s %s wird gestoppt, um Kodi zu starten."
+
+msgid "Your %s %s is rebooting into Android Mode"
+msgstr "Die %s %s startet neu in den Android Modus."
+
+msgid "Your %s %s is rebooting into Recovery Mode"
+msgstr "Die %s %s startet neu in den Recovery Modus."
+
+msgid ""
+"Your frontprocessor will be upgraded\n"
+"Please wait until your %s %s reboots\n"
+"This may take a few minutes"
+msgstr ""
+"Der Frontprozessor wird mit neuem Code geladen.\n"
+"Bitte warten, bis die %s %s neu startet.\n"
+"Dies kann ein paar Minuten dauern."
+
+msgid ""
+"The user interface of your %s %s is restarting\n"
+"due to an error in StartEnigma.py"
+msgstr "Das Benutzerinterface der %s %s wird wegen eines Fehlers neu gestartet."
+
+msgid ""
+"Upgrade in progress\n"
+"Please wait until your %s %s reboots\n"
+"This may take a few minutes"
+msgstr ""
+"Ein Upgrade wird durchgeführt.\n"
+"Bitte warten, bis die %s %s neu startet.\n"
+"Dies kann ein paar Minuten dauern."
+
+msgid ""
+"Reflash in progress\n"
+"Please wait until your %s %s reboots\n"
+"This may take a few minutes"
+msgstr ""
+"Das Flashen eines Images wird durchgeführt.\n"
+"Bitte warten, bis die %s %s neu startet.\n"
+"Dies kann ein paar Minuten dauern."
+
+msgid "SoftcamCheck"
+msgstr "Softcam-Überprüfung"
+
+msgid "%d job is running in the background!"
+msgid_plural "%d jobs are running in the background!"
+msgstr[0] "%d Job läuft im Hintergrund."
+msgstr[1] "%d Jobs laufen im Hintergrund."
+
+msgid "%d jobs are running in the background!"
+msgstr "%d Jobs laufen im Hintergrund."
+
+msgid "You seem to be in timeshift!"
+msgstr "Timeshift scheint aktiv zu sein."
+
+msgid "Recording(s) are in progress or coming up in few seconds!"
+msgstr "Aufnahmen laufen."
+
+msgid "A client is streaming from this box!"
+msgstr "Streaming eines Clients ist aktiv."
+
+msgid "Entering standby. Shutdown will proceed when all activities are finished."
+msgstr "Laufende Aktivitäten werden im Standby zu Ende geführt, bevor sich die Box ausschaltet."
+
+msgid "Really reboot now?"
+msgstr "Soll die Box jetzt neu gestartet werden?"
+
+msgid "Really restart now?"
+msgstr "Soll die GUI neu gestartet werden?"
+
+msgid "Really start Kodi and stop user interface now?"
+msgstr "Soll Kodi gestartet und das E2-Benutzerinterface beendet werden?"
+
+msgid "Really reboot into Android Mode?"
+msgstr "Soll jetzt wirklich der Android Modus gestartet werden?"
+
+msgid "Really reboot into Recovery Mode?"
+msgstr "Soll jetzt wirklich der Recovery Modus gestartet werden?"
+
+msgid "Really upgrade the frontprocessor and reboot now?"
+msgstr "Soll ein Frontprozessor-Upgrade und Neustart durchgeführt werden?"
+
+msgid "Really upgrade your %s %s and reboot now?"
+msgstr "Soll die Software der %s %s jetzt wirklich auf den neusten Stand gebracht und neu gestartet werden?"
+
+msgid "Really reflash your %s %s and reboot now?"
+msgstr "Soll auf der %s %s wirklich ein neues Image geflasht und neu gestartet werden?"
