@@ -481,7 +481,9 @@ class TryQuitMainloop(MessageBox):
 		else:
 			if event == iRecordableService.evEnd:
 				recordings = isLiveRecordingOrRecordingSoon(self.session)  # self.session.nav.getRecordings()
-				if not recordings:  # no more recordings exist
+				# a job (a timeshift recording, a download...) is running as well: no shutdown yet, as in DeferredShutdown.checkActivities
+				jobs = [job for job in job_manager.getPendingJobs() if job.name != _('SoftcamCheck')]
+				if not recordings and not jobs:  # no more recordings exist
 					rec_time = self.session.nav.RecordTimer.getNextRecordingTime()
 					if rec_time > 0 and (rec_time - time()) < 360:
 						self.initTimeout(360)  # wait for next starting timer
